@@ -3,10 +3,10 @@
 
 global =  {
     \time 2/2
-    \key c \major
     }
 
 hornI =  \relative c'' {
+    \key c \major
     \repeat volta 2 {
     e4-\omit\p r e8( d) d( c ) |
     c4 r8 g-.\< c-. d-. e-. f-. |
@@ -30,12 +30,13 @@ hornI =  \relative c'' {
     }
 }
 hornII =  \relative c'' {
+    \key c \major
         \repeat volta 2 {
 	    c4\p r4 c8(g) g(e) |
 	    e4 r r8 g-.\< c-. d-. |
 	    e(\mf c) f(e) e(d) d(c) |
-	    g-. g( fis g) g,4 r4 |
-	    c'\p r8 c c( g) g( e) |
+	    g-. g( fis g) g4 r4 |
+	    c\p r8 c c( g) g( e) |
 	    e4 r r8 g-.\< c-. d-. |
 	    e4\f c8( e) e( d c g) |
 	    g2( \octaveCheck e' e4) r 
@@ -54,8 +55,14 @@ hornII =  \relative c'' {
 
 \score {
   \new StaffGroup   <<
-    \new Staff << \global \hornI >>
-    \new Staff << \global \hornII >>
+    \new Staff \with {
+        midiInstrument="clarinet"
+        instrumentName="Clarinet"
+    }  << \transposition bes \transpose c d \hornI >>
+    \new Staff \with {
+        midiInstrument="viola"
+        instrumentName="Viola"
+    }  << \clef alto \transpose c' c \hornII >>
     >>
   
   \midi {

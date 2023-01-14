@@ -22,8 +22,8 @@
 \paper {
   top-margin = 8\mm
   top-markup-spacing.basic-distance = #6
-  markup-markup-spacing #'padding = #1.2
-  system-system-spacing  #'padding = #5
+  markup-markup-spacing = #1.2
+  system-system-spacing = #5
   last-bottom-spacing.basic-distance = #12
   top-system-spacing.basic-distance = #12
   bottom-margin = 10\mm
